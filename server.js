@@ -153,6 +153,7 @@ const server = http.createServer((req, res) => {
       body += chunk;
     });
     req.on("end", () => {
+      let inputDataIndex = "";
       inputDataIndex = inputData.findIndex((obj) => obj.id == post);
       if (JSON.parse(body).title) {
         inputData[inputDataIndex].title = JSON.parse(body).title;
